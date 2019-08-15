@@ -1,0 +1,3 @@
+- name: InvalidNumber
+  description: >
+    An InvalidNumber error.

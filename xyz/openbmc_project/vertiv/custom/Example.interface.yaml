@@ -1,0 +1,48 @@
+description: >
+    Some simple method that exposes a method on dbus.
+methods:
+    - name: Write
+      description: >
+        Write data to Dbus.
+      parameters:
+        - name: writeId
+          type: int32
+          description: >
+            The integer that was sent.
+        - name: writeStr
+          type: string
+          description: >
+            The string that was sent.
+    - name: Clear
+      description: >
+        Reset all properties to default value.
+properties:
+    - name: NumWrite
+      type: uint32
+      default: 0
+      flags:
+        - const
+      description: >
+        The calling times of Write method.
+      errors:
+        - self.Error.InvalidNumber
+    - name: LastStr
+      type: string
+      default: ""
+      description: >
+        The string of last record.
+    - name: LastInt
+      type: int32
+      default: 0
+      description: >
+        The integer of last record.
+signals:
+    - name: Cleared
+      description: >
+        Signal indicating the NumWrite property has been set to zero by the
+        'Clear' method.
+      properties:
+        - name: LastNumWrite
+          type: uint32
+          description: >
+            Value of NumWrite prior to Clear.
