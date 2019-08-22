@@ -5,7 +5,7 @@ BUILT_SOURCES = \
     xyz/openbmc_project/vertiv/custom/Example/error.hpp
 
 
-sbin_PROGRAMS = hello_dbus
+bin_PROGRAMS = hello_dbus
 hello_dbus_SOURCES = \
 				dbus_example.cpp \
 				xyz/openbmc_project/vertiv/custom/Example/server.cpp \
