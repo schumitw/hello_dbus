@@ -36,6 +36,21 @@ properties:
       default: 0
       description: >
         The integer of last record.
+    - name: OemInt
+      type: int32
+      default: 0
+      description: >
+        The OemInt property of Redfish
+    - name: OemBoolean
+      type: boolean
+      default: 0
+      description: >
+        The OemBoolean property of Redfish
+    - name: OemString
+      type: string
+      default: ""
+      description: >
+        The OemString property of Redfish
 signals:
     - name: Cleared
       description: >
