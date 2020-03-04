@@ -29,11 +29,11 @@ AS_IF([test "x$SDBUSPLUSPLUS" == "x"],
     AC_MSG_ERROR(["Requires sdbus++"]))
 
 AC_ARG_VAR(BMC_BUSNAME, [The BMC Dbus busname to own])
-AS_IF([test "x$BMC_BUSNAME" == "x"], [BMC_BUSNAME="xyz.openbmc_project.Vertiv"])
+AS_IF([test "x$BMC_BUSNAME" == "x"], [BMC_BUSNAME="xyz.openbmc_project.hello_dbus"])
 AC_DEFINE_UNQUOTED([BMC_BUSNAME], ["$BMC_BUSNAME"], [The BMC DBus busname to own])
 
 AC_ARG_VAR(BMC_OBJPATH, [The BMC state manager Dbus root])
-AS_IF([test "x$BMC_OBJPATH" == "x"], [BMC_OBJPATH="/xyz/openbmc_project/vertiv/custom"])
+AS_IF([test "x$BMC_OBJPATH" == "x"], [BMC_OBJPATH="/xyz/openbmc_project/hello_dbus/custom"])
 AC_DEFINE_UNQUOTED([BMC_OBJPATH], ["$BMC_OBJPATH"], [The BMC state manager Dbus root])
 
 

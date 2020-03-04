@@ -1,7 +1,7 @@
 #pragma once
 
 #include <sdbusplus/server.hpp>
-#include "xyz/openbmc_project/vertiv/custom/Example/server.hpp"
+#include "xyz/openbmc_project/hello_dbus/custom/Example/server.hpp"
 
 namespace phosphor
 {
@@ -9,12 +9,12 @@ namespace custom
 {
 
 using ExampleIface = sdbusplus::server::object::object<
-    sdbusplus::xyz::openbmc_project::vertiv::custom::server::Example>;
+    sdbusplus::xyz::openbmc_project::hello_dbus::custom::server::Example>;
 
 /** @class Example
  *  @brief Example implementation.
  *  @details A concrete implementation for the
- *  xyz.openbmc_project.vertiv.custom.Example DBus API.
+ *  xyz.openbmc_project.hello_dbus.custom.Example DBus API.
  */
 class Example : public ExampleIface
 {

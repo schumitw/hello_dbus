@@ -1,7 +1,7 @@
 #include <iostream>
 #include <sdbusplus/server.hpp>
 #include "config.h"
-#include "xyz/openbmc_project/vertiv/custom/Example/server.hpp"
+#include "xyz/openbmc_project/hello_dbus/custom/Example/server.hpp"
 #include "dbus_example.hpp"
 
 int main(int argc, char**)
