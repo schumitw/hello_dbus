@@ -18,6 +18,12 @@ hello_dbus_LDFLAGS = $(SYSTEMD_LIBS) $(SDBUSPLUS_LIBS) \
 hello_dbus_CFLAGS =  $(SYSTEMD_CFLAGS) $(SDBUSPLUS_CFLAGS) \
                                  $(PHOSPHOR_DBUS_INTERFACES_CFLAGS)
 
+bin_PROGRAMS += hello_dbus_client
+
+hello_dbus_client_SOURCES = client.cpp
+hello_dbus_client_LDFLAGS = $(SDBUSPLUS_LIBS)
+hello_dbus_client_CFLAGS = $(SDBUSPLUS_CFLAGS)
+
 xyz/openbmc_project/hello_dbus/custom/Example/server.cpp: xyz/openbmc_project/hello_dbus/custom/Example.interface.yaml xyz/openbmc_project/hello_dbus/custom/Example/server.hpp
 	@mkdir -p `dirname $@`
 	$(SDBUSPLUSPLUS) -r $(srcdir) interface server-cpp xyz.openbmc_project.hello_dbus.custom.Example > $@
