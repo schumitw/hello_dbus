@@ -16,7 +16,7 @@ PKG_CHECK_MODULES([SDBUSPLUS], [sdbusplus],, \
     AC_MSG_ERROR(["Requires sdbusplus package."]))
 
 # Checks for typedefs, structures, and compiler characteristics.
-AX_CXX_COMPILE_STDCXX_17([noext])
+AX_CXX_COMPILE_STDCXX(20, [noext], [mandatory])
 AX_APPEND_COMPILE_FLAGS([-Wall -Werror], [CXXFLAGS])
 
 # Checks for library functions
@@ -39,7 +39,6 @@ AC_DEFINE_UNQUOTED([BMC_OBJPATH], ["$BMC_OBJPATH"], [The BMC state manager Dbus 
 
 # Check for header files.
 AC_CHECK_HEADER(systemd/sd-bus.h, ,[AC_MSG_ERROR([Could not find systemd/sd-bus.h...systemd developement package required])])
-AC_CHECK_HEADER(sdbusplus/bus/match.hpp, ,[AC_MSG_ERROR([Could not find sdbusplus/server/match.hpp...openbmc/sdbusplus package required])])
 
 AC_CONFIG_FILES([Makefile])
 AC_OUTPUT
