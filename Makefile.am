@@ -2,7 +2,8 @@ BUILT_SOURCES = \
 	xyz/openbmc_project/hello_dbus/custom/Example/server.cpp \
 	xyz/openbmc_project/hello_dbus/custom/Example/server.hpp \
     xyz/openbmc_project/hello_dbus/custom/Example/error.cpp \
-    xyz/openbmc_project/hello_dbus/custom/Example/error.hpp
+    xyz/openbmc_project/hello_dbus/custom/Example/error.hpp \
+	xyz/openbmc_project/hello_dbus/custom/Example/common.hpp
 
 
 bin_PROGRAMS = hello_dbus
@@ -39,3 +40,7 @@ xyz/openbmc_project/hello_dbus/custom/Example/error.cpp: xyz/openbmc_project/hel
 xyz/openbmc_project/hello_dbus/custom/Example/error.hpp: xyz/openbmc_project/hello_dbus/custom/Example.errors.yaml
 	@mkdir -p `dirname $@`
 	$(SDBUSPLUSPLUS) -r $(srcdir) error exception-header xyz.openbmc_project.hello_dbus.custom.Example > $@
+
+xyz/openbmc_project/hello_dbus/custom/Example/common.hpp: xyz/openbmc_project/hello_dbus/custom/Example.interface.yaml
+	@mkdir -p `dirname $@`
+	$(SDBUSPLUSPLUS) -r $(srcdir) interface common-header xyz.openbmc_project.hello_dbus.custom.Example > $@
